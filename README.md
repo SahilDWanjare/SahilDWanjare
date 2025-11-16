@@ -2,7 +2,7 @@
 <h3 align="center">A passionate Flutter developer from India</h3>
 
 <p align="center">
-  <img src="https://media.giphy.com/media/LmNwrBhejkK9xFS5ft/giphy.gif" width="600" alt="Coding GIF">
+  <img src="https://tenor.com/hW8zrh8CgMe.gif" width="600" alt="Coding GIF">
 </p>
 
 <p align="center">
