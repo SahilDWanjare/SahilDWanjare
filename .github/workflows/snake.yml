@@ -1,25 +1,56 @@
-name: Generate Snake Animation
+name: Generate GitHub Contribution Snake
 
 on:
   schedule:
-    - cron: "0 0 * * *" # Runs daily at midnight UTC
-  workflow_dispatch:
+    - cron: '0 0 * * *'     # run daily (optional)
+  workflow_dispatch:         # allows manual run
 
 jobs:
-  generate:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: Platane/snk@v3
-        id: snake_svg
+      - name: Checkout default branch
+        uses: actions/checkout@v4
         with:
-          github_user_name: SahilDWanjare # IMPORTANT: Use your correct GitHub username
+          fetch-depth: 0
+
+      - name: Generate snake SVG
+        uses: Platane/snk@v4
+        with:
+          github_user_name: ${{ github.repository_owner }}
           outputs: |
             dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake.gif
-      - uses: crazy-max/ghaction-github-pages@v4
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+
+      - name: Configure git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Create/checkout output branch
+        run: |
+          git fetch origin output || true
+          if git show-ref --verify --quiet refs/heads/output; then
+            git checkout output
+            git reset --hard origin/output || true
+          else
+            git checkout --orphan output
+            git rm -rf .
+            git commit --allow-empty -m "Create output branch"
+          fi
+
+      - name: Copy generated files to repo root
+        run: |
+          mkdir -p dist
+          cp -f dist/github-contribution-grid-snake.svg dist/github-contribution-grid-snake-dark.svg ./dist/ || true
+          git add -A dist
+
+      - name: Commit and push
+        uses: EndBug/add-and-commit@v9
         with:
-          target_branch: output
-          build_dir: dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          author_name: GitHub Actions
+          author_email: actions@github.com
+          message: "chore(snake): update generated snake svg"
+          add: "dist"
+          push: true
+          branch: output
