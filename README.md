@@ -171,7 +171,7 @@ If you find my open-source projects or tutorials helpful, consider buying me a c
 </p>
 
 <p align="center">
-  <img src="https://github.com/Saa-Je/Saa-Je/blob/output/github-contribution-grid-snake.svg" alt="GitHub Contribution Snake">
+  <img src="https://raw.githubusercontent.com/sahildwanjare/sahildwanjare/output/github-contribution-grid-snake.svg" alt="GitHub Contribution Snake">
 </p>
 
 ---
