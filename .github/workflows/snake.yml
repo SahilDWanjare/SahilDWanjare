@@ -13,7 +13,7 @@ jobs:
       - uses: Platane/snk@v3
         id: snake_svg
         with:
-          github_user_name: sahil-d-wanjare # IMPORTANT: Use your correct GitHub username
+          github_user_name: SahilDWanjare # IMPORTANT: Use your correct GitHub username
           outputs: |
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake.gif
