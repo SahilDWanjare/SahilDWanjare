@@ -1,9 +1,9 @@
 <h1 align="center">Hi 👋, I'm Sahil D Wanjare</h1>
 <h3 align="center">A passionate Flutter developer from India</h3>
 
-<!-- <p align="center">
+<p align="center">
   <img src="https://c.tenor.com/hW8zrh8CgMe.gif" width="600" alt="Coding GIF">
-</p> -->
+</p> 
 
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=sahildwanjare&label=Profile%20views&color=0e75b6&style=flat" alt="sahildwanjare" />
@@ -25,7 +25,7 @@
 
 ### About Me
 
-- 🔭 I’m currently working on **MessSetGo** (a real-world project demonstrating your skills!).
+- 🔭 I’m currently working on **MessSetGo** (a food mess management application benefiting both users and mess owners).
 - 🌱 I’m constantly deepening my knowledge in **Flutter ecosystem and advanced mobile development patterns**.
 - 👯 I’m looking to collaborate on exciting **Flutter mobile applications and cross-platform projects**.
 - 📝 I regularly practice DSA on LeetCode: [My LeetCode Profile](https://leetcode.com/u/HPzuBLziE7/)
